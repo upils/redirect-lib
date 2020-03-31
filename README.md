@@ -16,7 +16,11 @@ Redirectors has following attributes:
 | Subtype        | Give more details on the redirector                                                               | `command line`, `web server`, `function`, `service to configure`, etc. |
 | Automated      | Is the deployement process automated ?                                                            | `yes`, `no`                                                            |
 | Keep Origin IP | Does the redirecter keep in any way the client IP and is able to tranfer it to the C2 ?           | `yes`, `no`                                                            |
-| Decrypt        | Does the redirector needs to decrypt the trafic and thus exposing data to the provider ?           | `yes`, `no`                                                            |
+| Decrypt        | Does the redirector needs to decrypt the trafic and thus exposing data to the provider ?          | `yes`, `no`                                                            |
+
+## Automation
+
+Automated solution make use of `terraform` and `ansible` when needed and possible.
 
 ## Ideas
 
