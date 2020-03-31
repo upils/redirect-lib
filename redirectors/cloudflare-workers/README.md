@@ -10,4 +10,4 @@
 
 ## Resources
 
-[Red-Baron](https://github.com/WheelsVT/Red-Baron/tree/master/modules/cloudflare)
+- [Red-Baron](https://github.com/WheelsVT/Red-Baron/tree/master/modules/cloudflare)

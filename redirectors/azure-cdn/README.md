@@ -10,4 +10,4 @@
 
 ## Resources
 
-[Configuring Azure CDN HTTP-HTTPS redirection](https://medium.com/azure-architects/configuring-azure-cdn-http-https-redirection-2a9e4aab0a77)
+- [Configuring Azure CDN HTTP-HTTPS redirection](https://medium.com/azure-architects/configuring-azure-cdn-http-https-redirection-2a9e4aab0a77)

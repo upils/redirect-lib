@@ -10,4 +10,4 @@
 
 ## Resources
 
-[Traefik ProxyProtocol](https://docs.traefik.io/routing/entrypoints/#proxyprotocol)
+- [Traefik ProxyProtocol](https://docs.traefik.io/routing/entrypoints/#proxyprotocol)

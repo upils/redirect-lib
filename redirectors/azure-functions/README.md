@@ -10,4 +10,4 @@
 
 ## Resources
 
-[Azure Functions - Functional Redirection](https://fortynorthsecurity.com/blog/azure-functions-functional-redirection/)
+- [Azure Functions - Functional Redirection](https://fortynorthsecurity.com/blog/azure-functions-functional-redirection/)
