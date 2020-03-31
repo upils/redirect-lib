@@ -4,6 +4,8 @@
 | ------- | ---------- | --------- | ------------------------------- | ------- |
 | `smart` | `function` | `no`      | `yes` (if X-Forwarded-For used) | `yes`   |
 
+## How to
+
 ## Comments
 
 ## Resources

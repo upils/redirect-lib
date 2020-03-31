@@ -4,6 +4,8 @@
 | ------- | ------------ | --------- | ----------------------------- | ------- |
 | `smart` | `web server` | `no`      | `no`  (if proxyprotocol used) | `no`    |
 
+## How to
+
 ## Comments
 
 ## Resources

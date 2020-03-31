@@ -4,6 +4,8 @@
 | ------ | -------------- | --------- | -------------- | ------- |
 | `dumb` | `command line` | `no`      | `no`           | `no`    |
 
+## How to
+
 ## Comments
 
 ## Resources
