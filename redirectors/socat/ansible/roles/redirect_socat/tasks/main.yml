@@ -17,4 +17,15 @@
   cron:
     name: "Redirector"
     special_time: reboot
-    job: "socat -lf /var/log/socat.log TCP4-LISTEN:443,fork TCP4:{{ C2_IP }}:443 &"
+    job: "socat -lf /var/log/socat.log TCP4-LISTEN:443,fork TCP4:{{ c2_ip }}:443 &"
+  notify: reboot
+
+
+- name : Check if socat is running
+  command: ps aux | awk '{print $11}' | grep -e "^socat"
+  register: socat_running
+  ignore_errors: True
+
+- name: Launch socat if not already running
+  shell: socat -lf /var/log/socat.log TCP4-LISTEN:443,fork TCP4:{{ c2_ip }}:443 2>&1 &
+  when: socat_running is failed

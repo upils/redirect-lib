@@ -2,3 +2,5 @@
   roles:
     - redirect_socat
   become: yes
+  vars:
+    c2_ip: "127.0.0.1"
