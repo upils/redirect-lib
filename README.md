@@ -4,6 +4,8 @@ Library of traffic redirectors.
 
 This project aim to gather methods to redirect traffic (HTTP/S, DNS) to another server. This capability is usefull to hide a server IP and bring flexibility. If the redirector is identified and blocked by defenders, a new one can be setup more easily than a full C&C server.
 
+Having multiple methods enable the redteam to gain flexibility, adapt to different situation and better emulate real adversary.
+
 Each documented redirection method is in a dedicated directory.
 
 ## Categories
@@ -54,6 +56,25 @@ If you don't need much, you may even stay under the "Free Tier" or "developper" 
 Some global recommendations/comments:
 
 - As you may notice, cloud instance choosen in automation are the smallest ones. You only need to redirect HTTP/S requests. If you find cheapest/smallest solutions, feel free to open an issue.
+
+## Status
+
+| Method                   | Documented    | Ansible       | Terraform     |
+| ------------------------ | ------------- | ------------- | ------------- |
+| `socat`                  | :white_check: | :white_check: | :white_check: |
+| `ssh`                    | :white_check: | :white_check: | :x:           |
+| `iptables`               | :white_check: | :x:           | :x:           |
+| `apache`                 | :x:           | :x:           | :x:           |
+| `nginx`                  | :x:           | :x:           | :x:           |
+| `haproxy`                | :x:           | :x:           | :x:           |
+| `traefik`                | :x:           | :x:           | :x:           |
+| `google-cloud-functions` | :x:           | :x:           | :x:           |
+| `cloudflare-workers`     | :x:           | :x:           | :x:           |
+| `azure-functions`        | :x:           | :x:           | :x:           |
+| `aws-lambda`             | :x:           | :x:           | :x:           |
+| `azure-cdn`              | :x:           | :x:           | :x:           |
+| `cloudflare-cdn`         | :x:           | :x:           | :x:           |
+| `go-proxy`               | :x:           | :x:           | :x:           |
 
 ## Ideas
 

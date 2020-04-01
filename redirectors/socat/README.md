@@ -1,4 +1,4 @@
-# Socqt
+# Socat
 
 | Type   | Subtype        | Automated | Keep Origin IP | Decrypt |
 | ------ | -------------- | --------- | -------------- | ------- |
