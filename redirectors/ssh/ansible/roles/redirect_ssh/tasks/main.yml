@@ -1,4 +1,3 @@
-
 - name: Configure SSH
   block:
   - name: Ensure anyone can connect to forwarded ports
