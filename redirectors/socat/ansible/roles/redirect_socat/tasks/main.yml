@@ -1,0 +1,20 @@
+- name: Ensure socat is installed
+  apt: 
+    name: socat
+    state: present
+
+- name: Get socat version
+  command: socat -V
+  register: socat_version_result
+
+- name: Ensure log file exists
+  file:
+    path: /var/log/socat.log
+    state: touch
+    mode: '0644'
+
+- name: Set cronjob to launch socat at reboot
+  cron:
+    name: "Redirector"
+    special_time: reboot
+    job: "socat -lf /var/log/socat.log TCP4-LISTEN:443,fork TCP4:{{ C2_IP }}:443 &"
