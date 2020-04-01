@@ -6,6 +6,8 @@
 
 ## How to
 
+### Install
+
 Edit `/etc/ssh/sshd_config`, and uncomment as follow:
 
 ```bash
@@ -16,7 +18,9 @@ GatewayPorts yes
 AllowTcpForwarding yes
 ```
 
-Then, from **the C2 server**, launch:
+### Launch
+
+From **the C2 server**, launch:
 
 ```bash
 ssh <USER>@<REDIRECTOR_IP> -R *:443:localhost:443
@@ -24,7 +28,7 @@ ssh <USER>@<REDIRECTOR_IP> -R *:443:localhost:443
 
 ## Comments
 
-- You need a second `ssh` command to redirect TCP/80
+- To redirect another port in the same SSH session, add another `-R *:<REMOTE_PORT>:localhost:<LOCAL_PORT>` block to the command line.
 
 ## Resources
 
