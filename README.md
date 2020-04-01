@@ -59,22 +59,22 @@ Some global recommendations/comments:
 
 ## Status
 
-| Method                   | Documented    | Ansible       | Terraform     |
-| ------------------------ | ------------- | ------------- | ------------- |
-| `socat`                  | :white_check: | :white_check: | :white_check: |
-| `ssh`                    | :white_check: | :white_check: | :x:           |
-| `iptables`               | :white_check: | :x:           | :x:           |
-| `apache`                 | :x:           | :x:           | :x:           |
-| `nginx`                  | :x:           | :x:           | :x:           |
-| `haproxy`                | :x:           | :x:           | :x:           |
-| `traefik`                | :x:           | :x:           | :x:           |
-| `google-cloud-functions` | :x:           | :x:           | :x:           |
-| `cloudflare-workers`     | :x:           | :x:           | :x:           |
-| `azure-functions`        | :x:           | :x:           | :x:           |
-| `aws-lambda`             | :x:           | :x:           | :x:           |
-| `azure-cdn`              | :x:           | :x:           | :x:           |
-| `cloudflare-cdn`         | :x:           | :x:           | :x:           |
-| `go-proxy`               | :x:           | :x:           | :x:           |
+| Method                   | Documented         | Ansible            | Terraform          |
+| ------------------------ | ------------------ | ------------------ | ------------------ |
+| `socat`                  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| `ssh`                    | :white_check_mark: | :white_check_mark: | :x:                |
+| `iptables`               | :white_check_mark: | :x:                | :x:                |
+| `apache`                 | :x:                | :x:                | :x:                |
+| `nginx`                  | :x:                | :x:                | :x:                |
+| `haproxy`                | :x:                | :x:                | :x:                |
+| `traefik`                | :x:                | :x:                | :x:                |
+| `google-cloud-functions` | :x:                | :x:                | :x:                |
+| `cloudflare-workers`     | :x:                | :x:                | :x:                |
+| `azure-functions`        | :x:                | :x:                | :x:                |
+| `aws-lambda`             | :x:                | :x:                | :x:                |
+| `azure-cdn`              | :x:                | :x:                | :x:                |
+| `cloudflare-cdn`         | :x:                | :x:                | :x:                |
+| `go-proxy`               | :x:                | :x:                | :x:                |
 
 ## Ideas
 
