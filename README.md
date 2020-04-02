@@ -62,8 +62,8 @@ Some global recommendations/comments:
 | Method                   | Documented         | Ansible            | Terraform          |
 | ------------------------ | ------------------ | ------------------ | ------------------ |
 | `socat`                  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| `ssh`                    | :white_check_mark: | :white_check_mark: | :x:                |
-| `iptables`               | :white_check_mark: | :x:                | :x:                |
+| `ssh`                    | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| `iptables`               | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `apache`                 | :x:                | :x:                | :x:                |
 | `nginx`                  | :x:                | :x:                | :x:                |
 | `haproxy`                | :x:                | :x:                | :x:                |
