@@ -2,7 +2,7 @@
 
 | Type   | Subtype        | Automated | Keep Origin IP | Decrypt |
 | ------ | -------------- | --------- | -------------- | ------- |
-| `dumb` | `command line` | `no`      | `no`           | `no`    |
+| `dumb` | `command line` | `yes`     | `no`           | `no`    |
 
 ## How to
 
