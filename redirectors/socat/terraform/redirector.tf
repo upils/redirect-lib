@@ -68,6 +68,8 @@ resource "aws_instance" "redirector" {
       --private-key=${local_file.ssh_private_key_pem.filename} \
       -e host=${aws_instance.redirector.public_ip} \
       -e c2_ip=${var.c2_ip} \
+      -e listenning_port=${var.listenning_port} \
+      -e c2_port=${var.c2_port} \
       -i '${aws_instance.redirector.public_ip},' \
       ${path.cwd}/../ansible/main.yml
       EOT
