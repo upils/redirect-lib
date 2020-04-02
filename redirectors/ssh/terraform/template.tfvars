@@ -1,4 +1,3 @@
-c2_ip           = "127.0.0.1"
 redirector_name = "redirector"
 credentials = {
   "AWS_DEFAULT_REGION"    = ""

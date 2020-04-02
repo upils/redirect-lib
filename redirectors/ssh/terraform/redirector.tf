@@ -67,7 +67,6 @@ resource "aws_instance" "redirector" {
       ansible-playbook --user=ubuntu \
       --private-key=${local_file.ssh_private_key_pem.filename} \
       -e host=${aws_instance.redirector.public_ip} \
-      -e c2_ip=${var.c2_ip} \
       -i '${aws_instance.redirector.public_ip},' \
       ${path.cwd}/../ansible/main.yml
       EOT
