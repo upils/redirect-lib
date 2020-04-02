@@ -1,0 +1,8 @@
+- hosts: all
+  roles:
+    - redirect_iptables
+  become: yes
+  vars:
+    listenning_port: 443
+    c2_port: 443
+    c2_ip: "127.0.0.1"

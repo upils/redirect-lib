@@ -1,0 +1,52 @@
+- name: Ensure iptables-persistent is installed
+  apt: 
+    name: iptables-persistent
+    state: present
+
+- name: iptables -I INPUT -p tcp -m tcp --dport {{ listenning_port }} -j ACCEPT
+  iptables:
+    action: insert
+    chain: INPUT
+    protocol: tcp
+    destination_port: {{ listenning_port }}
+    match: tcp
+    jump: ACCEPT
+
+- name: iptables -t nat -A PREROUTING -p tcp --dport {{ c2_port }} -j DNAT --to-destination {{ c2_ip }}
+  iptables:
+    table: nat
+    action: append
+    chain: PREROUTING
+    protocol: tcp
+    destination_port: {{ c2_port }}
+    jump: DNAT
+    to_destination: {{ c2_ip }}
+
+- name: iptables -t nat -A POSTROUTING -j MASQUERADE
+  iptables:
+    table: nat
+    action: append
+    chain: POSTROUTING
+    jump: MASQUERADE
+
+- name: iptables -I FORWARD -j ACCEPT
+  iptables:
+    action: insert
+    chain: FORWARD
+    jump: ACCEPT
+
+- name: iptables -P FORWARD ACCEPT
+  iptables:
+    chain: FORWARD
+    policy: ACCEPT
+
+- name: Allow ip forward
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_set: yes
+    state: present
+
+- name : Save rules to survive reboot
+  command: netfilter-persistent save
+
