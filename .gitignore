@@ -21,3 +21,5 @@ venv.bak/
 env
 .vs/
 .vscode/
+**/ssh_keys/*
+!.gitkeep
