@@ -1,0 +1,23 @@
+[tcp.services]
+  [tcp.services.redirectorServiceTCP.loadBalancer]
+    [[tcp.services.redirectorService.loadBalancer.servers]]
+      address = "{{ c2_ip }}:{{ c2_port }}"
+
+[http.services]
+  [http.services.redirectorServiceHTTP.loadBalancer]
+    [[tcp.services.redirectorServiceHTTP.loadBalancer.servers]]
+      address = "{{ c2_ip }}:{{ c2_port }}"
+
+[http]
+  [http.routers]
+    [http.routers.redirectorRouterHTTP]
+      entrypoints = ["redirectorEntrypoint"]
+      rule = "Host(`*`)"
+      service = "redirectorServiceHTTP"
+
+[tcp]
+  [tcp.routers]
+    [tcp.routers.redirectorRouter]
+      entrypoints = ["redirectorEntrypoint"]
+      rule = "HostSNI(`*`)"
+      service = "redirectorServiceTCP"

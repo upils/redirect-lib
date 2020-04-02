@@ -1,0 +1,52 @@
+- name: Create traefik systemd unit
+  template:
+    src: "{{ traefik_systemd_unit_template }}.j2"
+    dest: "{{ traefik_systemd_unit_dest }}"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart traefik
+
+- name: Ensure install & config directory exists
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ traefik_install_dir }}"
+
+- name: Copy traefik config file
+  template:
+    src: "{{ traefik_template }}.j2"
+    dest: "{{ traefik_config_file }}"
+    owner: root
+    group: root
+    mode: 0744
+  notify:
+    - Restart traefik
+
+- name: Ensure traefik service is stopped before traefik update
+  service:
+    name: traefik
+    state: stopped
+    enabled: yes
+  when: traefik_update | bool == True
+
+- name: Download Traefik binary
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: 0755
+    force: "{{ traefik_update | bool }}"
+  with_items:
+    - url: "{{ traefik_binary_url }}"
+      dest: "{{ traefik_bin_path }}"
+
+- name: Ensure traefik service is enabled and running
+  systemd:
+    name: traefik
+    state: started
+    enabled: yes
+    daemon_reload: yes

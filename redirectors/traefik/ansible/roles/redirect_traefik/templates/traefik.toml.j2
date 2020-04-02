@@ -1,0 +1,23 @@
+[global]
+  checkNewVersion = true
+  sendAnonymousUsage = true
+
+[entryPoints]
+  [entryPoints.redirectorEntrypoint]
+    address = ":{{ listenning_port }}"
+    [entryPoints.redirectorEntrypoint.proxyProtocol]
+      insecure = true
+    [entryPoints.redirectorEntrypoint.forwardedHeaders]
+      insecure = true
+
+[providers]
+  [providers.file]
+    directory = "./"
+    watch = true
+    filename = "provider.toml"
+    debugLogGeneratedTemplate = true
+
+[api]
+  insecure = true
+  dashboard = true
+  debug = true
