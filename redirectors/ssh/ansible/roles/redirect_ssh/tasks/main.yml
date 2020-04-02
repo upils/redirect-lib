@@ -1,13 +1,13 @@
-- name: Configure SSH
-  block:
-  - name: Ensure anyone can connect to forwarded ports
-    lineinfile:
-      path: /etc/ssh/sshd_config
-      regexp: '^GatewayPorts'
-      line: GatewayPorts yes
-  - name: Ensure anyone can connect to forwarded ports
-    lineinfile:
-      path: /etc/ssh/sshd_config
-      regexp: '^AllowTcpForwarding'
-      line: AllowTcpForwarding yes
+- name: Ensure anyone can connect to forwarded ports
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^# GatewayPorts'
+    line: GatewayPorts yes
+  notify: reload ssh
+
+- name: Allow both local and remote (to external machines) port forwards
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^# AllowTcpForwarding'
+    line: AllowTcpForwarding yes
   notify: reload ssh
