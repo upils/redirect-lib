@@ -6,7 +6,7 @@ Documentation=https://docs.traefik.io
 
 [Service]
 Type=notify
-ExecStart={{ traefik_bin_path }} --configFile={{ traefik_config_file }}
+ExecStart={{ traefik_bin_path }}/traefik --configFile={{ traefik_base_config_file }}
 Restart=on-failure
 WatchdogSec=1s
 

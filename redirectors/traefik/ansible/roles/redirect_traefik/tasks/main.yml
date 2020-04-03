@@ -17,8 +17,8 @@
 
 - name: Copy traefik base config file
   template:
-    src: "{{ traefik_template }}.j2"
-    dest: "{{ traefik_config_file }}"
+    src: "{{ traefik_base_template }}.j2"
+    dest: "{{ traefik_base_config_file }}"
     owner: root
     group: root
     mode: 0744
@@ -27,8 +27,8 @@
 
 - name: Copy traefik provider config file
   template:
-    src: "{{ traefik_template }}.j2"
-    dest: "{{ traefik_config_file }}"
+    src: "{{ traefik_provider_template }}.j2"
+    dest: "{{ traefik_provider_config_file }}"
     owner: root
     group: root
     mode: 0744
@@ -43,16 +43,14 @@
   when: traefik_update | bool == True
 
 - name: Download Traefik binary
-  get_url:
-    url: "{{ item.url }}"
-    dest: "{{ item.dest }}"
+  unarchive:
+    src: "{{ traefik_binary_url }}"
+    dest: "{{ traefik_bin_path }}"
+    remote_src: yes
     owner: root
     group: root
     mode: 0755
     force: "{{ traefik_update | bool }}"
-  with_items:
-    - url: "{{ traefik_binary_url }}"
-      dest: "{{ traefik_bin_path }}"
 
 - name: Ensure traefik service is enabled and running
   systemd:
