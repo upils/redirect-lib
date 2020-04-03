@@ -15,7 +15,7 @@
   with_items:
     - "{{ traefik_install_dir }}"
 
-- name: Copy traefik config file
+- name: Copy traefik base config file
   template:
     src: "{{ traefik_template }}.j2"
     dest: "{{ traefik_config_file }}"
@@ -23,7 +23,17 @@
     group: root
     mode: 0744
   notify:
-    - Restart traefik
+    - restart traefik
+
+- name: Copy traefik provider config file
+  template:
+    src: "{{ traefik_template }}.j2"
+    dest: "{{ traefik_config_file }}"
+    owner: root
+    group: root
+    mode: 0744
+  notify:
+    - restart traefik
 
 - name: Ensure traefik service is stopped before traefik update
   service:
