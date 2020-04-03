@@ -67,9 +67,9 @@ Some global recommendations/comments:
 | `apache`                 | :x:                | :x:                | :x:                |
 | `nginx`                  | :x:                | :x:                | :x:                |
 | `haproxy`                | :x:                | :x:                | :x:                |
-| `traefik`                | :x:                | :x:                | :x:                |
+| `traefik`                | :white_check_mark: | :x:                | :white_check_mark: |
 | `google-cloud-functions` | :x:                | :x:                | :x:                |
-| `cloudflare-workers`     | :x:                | :x:                | :x:                |
+| `cloudflare-workers`     | :white_check_mark: | N/A                | :white_check_mark: |
 | `azure-functions`        | :x:                | :x:                | :x:                |
 | `aws-lambda`             | :x:                | :x:                | :x:                |
 | `azure-cdn`              | :x:                | :x:                | :x:                |
