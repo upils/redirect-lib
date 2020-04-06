@@ -8,3 +8,5 @@ traefik_provider_template: provider.toml
 traefik_systemd_unit_template: traefik.service
 traefik_systemd_unit_dest: /etc/systemd/system/traefik.service
 traefik_update: no
+c2_ip: 127.0.0.1
+c2_port: 80
