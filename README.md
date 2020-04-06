@@ -69,10 +69,10 @@ Some global recommendations/comments:
 | `haproxy`                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `traefik`                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `cloudflare-workers`     | :white_check_mark: | N/A                | :white_check_mark: |
+| `azure-cdn`              | :white_check_mark: | N/A                | :white_check_mark: |
 | `google-cloud-functions` | :x:                | N/A                | :x:                |
 | `azure-functions`        | :x:                | N/A                | :x:                |
 | `aws-lambda`             | :x:                | N/A                | :x:                |
-| `azure-cdn`              | :x:                | N/A                | :x:                |
 | `cloudflare-cdn`         | :x:                | N/A                | :x:                |
 | `go-proxy`               | :x:                | :x:                | :x:                |
 
