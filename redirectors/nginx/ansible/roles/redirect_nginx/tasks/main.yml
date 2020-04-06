@@ -1,0 +1,23 @@
+- name: Ensure nginx is installed
+  apt: 
+    name: nginx-full
+    state: present
+
+- name: Get nginx version
+  command: nginx -v
+  register: nginx_version_result
+
+- name: Copy nginx conf
+  template:
+    src: "{{ nginx_conf_template }}.j2"
+    dest: "{{ nginx_config_file }}"
+    owner: root
+    group: root
+    mode: 0744
+  notify: reload nginx
+
+- name: Ensure nginx is started and enabled on boot
+  service:
+    name: nginx
+    state: started 
+    enabled: yes

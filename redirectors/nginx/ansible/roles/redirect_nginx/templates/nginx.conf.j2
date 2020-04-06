@@ -1,0 +1,49 @@
+user www-data;
+worker_processes 1;
+pid /var/run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+stream {
+  # DNS gateway
+  # server {
+  #   listen 53 udp;
+  #   proxy_pass {{ c2_ip }}:{{ c2_port_dns }};
+  # }
+
+  map $ssl_preread_server_name $name {
+    ${hostname}      remote;
+    default                  localhost;
+  }
+
+  # HTTPS gateway
+  upstream remote {
+    server {{ c2_ip }}:{{ c2_port_https }};
+  }
+
+  upstream localhost {
+    server 127.0.0.1:447;
+  }
+
+  server {
+    listen {{ listenning_port_https }};
+    proxy_pass $name;
+    proxy_protocol on;
+    ssl_preread on;
+  }
+
+  # HTTP gateway
+  server {
+    listen {{ listenning_port_http }};
+    proxy_pass {{ c2_ip }}:{{ c2_port_http }};
+    proxy_protocol on;
+  }
+}
+
+http {
+    include /etc/nginx/conf-enabled/*.conf;
+    include /etc/nginx/sites-enabled/*.conf;
+}

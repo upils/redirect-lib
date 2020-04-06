@@ -1,0 +1,8 @@
+c2_ip: 127.0.0.1
+c2_port_http: 80
+c2_port_https: 443
+c2_port_dns: 53
+listenning_port_http: 80
+listenning_port_https: 443
+nginx_config_file: /etc/nginx/nginx.conf
+nginx_conf_template: nginx.conf.j2

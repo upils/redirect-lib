@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+    - redirect_nginx
+  become: yes
