@@ -1,0 +1,7 @@
+c2_ip: 127.0.0.1
+c2_port_http: 80
+c2_port_https: 443
+listenning_port_http: 80
+listenning_port_https: 443
+haproxy_conf_template: haproxy.conf.j2
+haproxy_config_file: /etc/haproxy/haproxy.cfg

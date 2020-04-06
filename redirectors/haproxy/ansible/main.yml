@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+    - redirect_haproxy
+  become: yes

@@ -1,0 +1,19 @@
+- name: Ensure haproxy is installed
+  apt: 
+    name: haproxy
+    state: present
+
+- name: Copy haproxy conf
+  template:
+    src: "{{ haproxy_conf_template }}.j2"
+    dest: "{{ haproxy_config_file }}"
+    owner: root
+    group: root
+    mode: 0744
+  notify: reload haproxy
+
+- name: Ensure haproxy is started and enabled on boot
+  service:
+    name: haproxy
+    state: started 
+    enabled: yes
