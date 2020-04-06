@@ -32,3 +32,4 @@ systemctl reload haproxy.service
 ## Resources
 
 - [haproxy.cfg adapted from outflanknl/RedELK project](https://github.com/outflanknl/RedELK/blob/master/example-data-and-configs/HAProxy/haproxy.cfg)
+- [d3vzer0/cnc-relay](https://github.com/d3vzer0/cnc-relay/blob/master/relay/haproxy/haproxy.cfg)
