@@ -64,16 +64,16 @@ Some global recommendations/comments:
 | `socat`                  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `ssh`                    | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `iptables`               | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| `apache`                 | :x:                | :x:                | :x:                |
-| `nginx`                  | :x:                | :x:                | :x:                |
-| `haproxy`                | :x:                | :x:                | :x:                |
-| `traefik`                | :white_check_mark: | :x:                | :white_check_mark: |
-| `google-cloud-functions` | :x:                | :x:                | :x:                |
+| `apache`                 | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| `nginx`                  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| `haproxy`                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| `traefik`                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `cloudflare-workers`     | :white_check_mark: | N/A                | :white_check_mark: |
-| `azure-functions`        | :x:                | :x:                | :x:                |
-| `aws-lambda`             | :x:                | :x:                | :x:                |
-| `azure-cdn`              | :x:                | :x:                | :x:                |
-| `cloudflare-cdn`         | :x:                | :x:                | :x:                |
+| `google-cloud-functions` | :x:                | N/A                | :x:                |
+| `azure-functions`        | :x:                | N/A                | :x:                |
+| `aws-lambda`             | :x:                | N/A                | :x:                |
+| `azure-cdn`              | :x:                | N/A                | :x:                |
+| `cloudflare-cdn`         | :x:                | N/A                | :x:                |
 | `go-proxy`               | :x:                | :x:                | :x:                |
 
 ## Ideas
@@ -84,4 +84,4 @@ Here is the following ideas/candidates I have not yet explore:
 
 ## Resources
 
-[HTTPS Payload and C2 Redirectors](https://posts.specterops.io/https-payload-and-c2-redirectors-ff8eb6f87742)
+- [HTTPS Payload and C2 Redirectors](https://posts.specterops.io/https-payload-and-c2-redirectors-ff8eb6f87742)
