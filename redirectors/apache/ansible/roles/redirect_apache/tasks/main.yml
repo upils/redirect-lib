@@ -1,0 +1,79 @@
+- name: Ensure apache2 is installed
+  apt: 
+    name: apache2
+    state: present
+
+- name: Enable rewrite apache2 module
+  apache2_module:
+    state: present
+    name: rewrite
+
+- name: Enable proxy apache2 module
+  apache2_module:
+    state: present
+    name: proxy
+
+- name: Enable proxy_http apache2 module
+  apache2_module:
+    state: present
+    name: proxy_http
+
+- name: Enable remoteip apache2 module
+  apache2_module:
+    state: present
+    name: remoteip
+
+- name: Enable ssl apache2 module
+  apache2_module:
+    state: present
+    name: ssl
+
+- name: Enable headers apache2 module
+  apache2_module:
+    state: present
+    name: headers
+
+- name: Enable http2 apache2 module
+  apache2_module:
+    state: present
+    name: http2
+
+- name: Disable default modules for Debian
+  apache2_module:
+    state: absent
+    name: autoindex
+    force: True
+
+- name: Disable deflate module
+  apache2_module:
+    state: absent
+    name: deflate
+    force: True
+
+- name: Set ServerSignature Off for apache2
+  lineinfile:
+    path: /etc/apache2/conf-enabled/security.conf
+    regexp: 'ServerSignature On'
+    line: ServerSignature Off
+  notify: reload apache2
+
+- name: Set ServerTokens Prod for apache2
+  lineinfile:
+    path: /etc/apache2/conf-enabled/security.conf
+    regexp: 'ServerTokens OS'
+    line: ServerTokens Prod
+  notify: reload apache2
+
+- name: Clean default vhosts
+  file:
+    state: absent
+    path: "/etc/apache2/sites-enabled/"
+
+- name: Copy apache2 conf
+  template:
+    src: "{{ apache2_conf_template }}.j2"
+    dest: "/etc/apache2/sites-enabled/redirector.conf"
+    owner: root
+    group: root
+    mode: 0744
+  notify: reload apache2

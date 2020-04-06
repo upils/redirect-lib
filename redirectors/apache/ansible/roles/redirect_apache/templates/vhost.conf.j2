@@ -1,0 +1,30 @@
+<VirtualHost *:{{ listenning_port }}>
+    ServerName {{ hostname_clean_conf }}
+    ServerAlias {{ hostname }}
+    DocumentRoot /var/www/${domain_clean_path}/
+
+    SSLEngine on
+    # Disable Cert checking, useful if you're using a self-signed cert
+    SSLProxyEngine on
+    SSLProxyCheckPeerCN Off
+    SSLProxyCheckPeerName Off
+    SSLProxyCheckPeerExpire Off
+    ProxyPreserveHost On
+
+    remoteipproxyprotocol on
+    remoteipproxyprotocolexceptions 127.0.0.1
+    remoteipheader x-forwarded-for
+    remoteipproxiesheader x-forwarded-by
+
+    RewriteRule ^.*$ "%%{REQUEST_SCHEME}://{{ c2_ip }}%%{REQUEST_URI}" [P,L]
+
+    <Directory /var/www/${domain_clean_path}/> 
+        Options Indexes FollowSymLinks ExecCGI MultiViews
+        MultiviewsMatch Handlers
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog $${APACHE_LOG_DIR}/redirector_error.log
+    CustomLog $${APACHE_LOG_DIR}/redirector_access.log "%t client:%a redir:%%{c}h domain:%%{Host}i \"%r\" %>s %b \"%%{Referer}i\" \"%%{User-agent}i\""
+</VirtualHost>
