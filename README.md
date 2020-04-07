@@ -1,6 +1,6 @@
-# redirect-lib
+# C&C Redirectors Library
 
-Library of traffic redirectors.
+Library of **command and control traffic redirectors**, used in redteam engagements.
 
 This project aim to gather methods to redirect traffic (HTTP/S, DNS) to another server. This capability is usefull to hide a server IP and bring flexibility. If the redirector is identified and blocked by defenders, a new one can be setup more easily than a full C&C server.
 
