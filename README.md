@@ -70,7 +70,7 @@ Some global recommendations/comments:
 | `traefik`                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `cloudflare-workers`     | :white_check_mark: | N/A                | :white_check_mark: |
 | `azure-cdn`              | :white_check_mark: | N/A                | :white_check_mark: |
-| `aws-cloufront`          | :white_check_mark: | N/A                | :white_check_mark: |
+| `aws-cloudfront`          | :white_check_mark: | N/A                | :white_check_mark: |
 | `azure-functions`        | :x:                | N/A                | :x:                |
 | `cloudflare-cdn`         | :x:                | N/A                | :x:                |
 | `azure-functions`        | :x:                | N/A                | :x:                |

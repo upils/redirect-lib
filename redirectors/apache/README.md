@@ -2,7 +2,7 @@
 
 | Type    | Subtype      | Automated | Keep Origin IP                | Decrypt |
 | ------- | ------------ | --------- | ----------------------------- | ------- |
-| `smart` | `web server` | `yes`     | `yes` (if proxyprotocol used) | `no`    |
+| `smart` | `web server` | `yes`     | `yes` (if proxyprotocol used) | `yes`   |
 
 ## How to
 
