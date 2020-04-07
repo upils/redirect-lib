@@ -70,17 +70,21 @@ Some global recommendations/comments:
 | `traefik`                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | `cloudflare-workers`     | :white_check_mark: | N/A                | :white_check_mark: |
 | `azure-cdn`              | :white_check_mark: | N/A                | :white_check_mark: |
-| `google-cloud-functions` | :x:                | N/A                | :x:                |
+| `aws-cloufront`          | :white_check_mark: | N/A                | :white_check_mark: |
 | `azure-functions`        | :x:                | N/A                | :x:                |
-| `aws-lambda`             | :x:                | N/A                | :x:                |
 | `cloudflare-cdn`         | :x:                | N/A                | :x:                |
+| `azure-functions`        | :x:                | N/A                | :x:                |
+| `google-cloud-functions` | :x:                | N/A                | :x:                |
+| `aws-lambda`             | :x:                | N/A                | :x:                |
 | `go-proxy`               | :x:                | :x:                | :x:                |
 
-## Ideas
+## Ideas / Possible candidates for integration
 
 Here is the following ideas/candidates I have not yet explore:
 
 - Netlify CDN
+- [tinyproxy](https://github.com/tinyproxy/tinyproxy)
+- [mitmproxy](https://mitmproxy.org/)
 
 ## Resources
 
